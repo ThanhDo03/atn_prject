@@ -15,7 +15,7 @@ services:
     volumes:
       - ./data:/var/lib/mysql
     environment:
-      MYSQL_DATABASE: ToysKid_Project
+      MYSQL_DATABASE: toyskid_project
       MYSQL_USER: dott
       MYSQL_PASSWORD: dbPass@123
       MYSQL_ROOT_PASSWORD: 123@123Aa
