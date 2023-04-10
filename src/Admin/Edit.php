@@ -27,7 +27,7 @@
             <?php
             // Truy vấn database
             // 1. Include file cấu hình kết nối đến database, khởi tạo kết nối $conn
-            include_once('config.php');
+            $connect = include_once("config.php");
             // $connect = mysqli_connect('localhost', 'root', '', 'toyskid_project');
             // if (!$connect) {
             //     # code...

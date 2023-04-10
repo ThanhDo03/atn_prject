@@ -1,3 +1,8 @@
+<?php
+session_start();
+include_once("config.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +49,7 @@
         </div>
 
         <?php
-        $connect = mysqli_connect('localhost', 'root', '', 'toyskid_project');
+        $connect = include_once("config.php");
         if (!$connect) {
             echo "Not Connect";
         }
@@ -64,7 +69,7 @@
 
         <?php
         session_start();
-        $connect = mysqli_connect('localhost', 'root', '', 'toyskid_project');
+        $connect = include_once("config.php");
         if (!$connect) {
             # code...
             echo "Not Connect!!";

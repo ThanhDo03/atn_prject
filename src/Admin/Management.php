@@ -55,7 +55,7 @@
                             </thead>
                             <tbody>
                                 <?php
-                                include_once('config.php');
+                                $connect = include_once("config.php");
                                 // $connect = mysqli_connect('localhost', 'root', '', 'toyskid_project');
                                 // if (!$connect) {
                                 //     echo 'Not Connect';

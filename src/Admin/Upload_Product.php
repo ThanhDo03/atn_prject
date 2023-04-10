@@ -80,7 +80,7 @@
                             </form>
                         </div>
                         <?php
-                        include_once('config.php');
+                        include_once("config.php");
                         // $connect = mysqli_connect('localhost', 'root', '', 'toyskid_project');
                         // if (!$connect) {
                         //     # code...

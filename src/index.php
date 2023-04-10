@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once('config.php');
+include_once("config.php");
 
 ?>
 <!DOCTYPE html>
@@ -309,7 +309,7 @@ include_once('config.php');
                     </div>
                     <div class="product-slider owl-carousel">
                         <?php
-                        include_once('config.php');
+                        $connect = include_once('config.php');
                         // $connect = mysqli_connect('db', 'dott', 'dbPass@123', 'ToysKid_Project');
                         
                         // if (mysqli_connect_errno()) {
