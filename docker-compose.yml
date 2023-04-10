@@ -1,0 +1,32 @@
+version: '3'
+services:
+  web:
+    image: php:7.4-apache
+    container_name: web
+    ports:
+      - "2480:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - db
+  db:
+    image: mysql:5.7
+    container_name: db
+    volumes:
+      - ./data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: ToysKid_Project
+      MYSQL_USER: dott
+      MYSQL_PASSWORD: dbPass@123
+      MYSQL_ROOT_PASSWORD: 123@123Aa
+
+  phpmyadmin:
+      image: phpmyadmin/phpmyadmin
+      container_name: phpmyadmin
+      ports:
+        - '2480:80'
+      restart: always
+      environment:
+        PMA_HOST: db
+      depends_on:
+        - db
