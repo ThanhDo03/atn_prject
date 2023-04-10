@@ -4,7 +4,7 @@ services:
     image: php:7.4-apache
     container_name: web
     ports:
-      - "2480:80"
+      - "80:80"
     volumes:
       - ./src:/var/www/html
     depends_on:
@@ -24,7 +24,7 @@ services:
       image: phpmyadmin/phpmyadmin
       container_name: phpmyadmin
       ports:
-        - '2480:80'
+        - '80:80'
       restart: always
       environment:
         PMA_HOST: db
