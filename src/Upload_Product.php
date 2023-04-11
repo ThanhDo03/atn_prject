@@ -103,7 +103,7 @@
                                 echo "<script>alert('No')</script>";
                             } else {
                                 $sql = "INSERT INTO products VALUES('','$name','$description','$price','$amount','$image')";
-                                $result = mysqli_query($connect, $sql);
+                                $result = mysqli_query($mysqli, $sql);
                                 if ($result) {
                                     echo "<script>alert('Thêm sản phẩm thành công') </script>";
                                     // header('location: Management.php');

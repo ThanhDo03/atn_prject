@@ -48,17 +48,18 @@ include_once("config.php");
             </div>
         </div>
 
+        <!-- Register -->
         <?php
-        $connect = include_once("config.php");
-        if (!$connect) {
-            echo "Not Connect";
-        }
+        include_once("config.php");
+        // if (!$connect) {
+        //     echo "Not Connect";
+        // }
         if (isset($_POST['submit'])) {
             $name = $_POST['name'];
             $email = $_POST['email'];
             $pass = $_POST['pswd'];
             $sql = "INSERT INTO users (name, email, password) VALUES ('$name','$email','$pass')";
-            $result = mysqli_query($connect, $sql);
+            $result = mysqli_query($mysqli, $sql);
             if ($result) {
                 echo "<script>alert('Sign Up Success!!')</script>";
             } else {
@@ -66,20 +67,20 @@ include_once("config.php");
             }
         }
         ?>
-
+        <!-- Login -->
         <?php
         session_start();
-        $connect = include_once("config.php");
-        if (!$connect) {
-            # code...
-            echo "Not Connect!!";
-        }
+        include_once("config.php");
+        // if (!$connect) {
+        //     # code...
+        //     echo "Not Connect!!";
+        // }
         if (isset($_POST['submit1'])) {
             # code...
             $useremail = $_POST['email_login'];
             $userpassw = $_POST['pswd_login'];
             $sql = " SELECT * FROM users WHERE email = '$useremail' AND password = '$userpassw'";
-            $result = mysqli_query($connect, $sql);
+            $result = mysqli_query($mysqli, $sql);
             $count_rows = mysqli_num_rows($result);
             if ($count_rows == 0) {
                 echo "<script> alert('Wrong username or password!!!')</script>";

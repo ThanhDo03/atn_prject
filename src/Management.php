@@ -55,13 +55,13 @@
                             </thead>
                             <tbody>
                                 <?php
-                                $connect = include_once("config.php");
+                                include_once("config.php");
                                 // $connect = mysqli_connect('localhost', 'root', '', 'toyskid_project');
                                 // if (!$connect) {
                                 //     echo 'Not Connect';
                                 // }
                                 $sql = 'SELECT * FROM products';
-                                $result = mysqli_query($connect, $sql);
+                                $result = mysqli_query($mysqli, $sql);
                                 while ($row_product = mysqli_fetch_array($result)) {
                                     $id = $row_product['id'];
                                     $image = $row_product['Image'];

@@ -239,16 +239,14 @@ include_once("config.php");
                     </div>
                     <div class="product-slider owl-carousel">
                         <?php
-                        $connect = include_once('config.php');
+                        include_once('config.php');
                         // $connect = mysqli_connect('db', 'dott', 'dbPass@123', 'ToysKid_Project');
-                        
                         // if (mysqli_connect_errno()) {
                         //     echo 'Không thể kết nối đến MySQL: ' . mysqli_connect_error();
                         //     exit();
                         // }
-                        
                         // truy vấn dữ liệu
-                        $result = mysqli_query($connect, 'SELECT name, price, Image FROM products');
+                        $result = mysqli_query($mysqli, 'SELECT name, price, Image FROM products');
                         
                         // kiểm tra kết quả và hiển thị dữ liệu
                         if (mysqli_num_rows($result) > 0) {
@@ -260,7 +258,7 @@ include_once("config.php");
                                 echo "
                                 <div class='product-item'>
                                 <div class='pi-pic'>
-                                    <img src='./Admin/Products\\$image'>
+                                    <img src='./Products\\$image'>
                                     <div class='sale'>Sale</div>
                                     <div class='icon'>
                                         <i class='icon_heart_alt'></i>
@@ -288,7 +286,7 @@ include_once("config.php");
                         }
                         
                         // đóng kết nối
-                        mysqli_close($connect);
+                        mysqli_close($mysqli);
                         ?>
                     </div>
                 </div>

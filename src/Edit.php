@@ -27,7 +27,7 @@
             <?php
             // Truy vấn database
             // 1. Include file cấu hình kết nối đến database, khởi tạo kết nối $conn
-            $connect = include_once("config.php");
+            include_once("config.php");
             // $connect = mysqli_connect('localhost', 'root', '', 'toyskid_project');
             // if (!$connect) {
             //     # code...
@@ -41,7 +41,7 @@
             $sqlSelect = "SELECT * FROM `products` WHERE id=$id;";
             
             // 3. Thực thi câu truy vấn SQL để lấy về dữ liệu ban đầu của record cần update
-            $resultSelect = mysqli_query($connect, $sqlSelect);
+            $resultSelect = mysqli_query($mysqli, $sqlSelect);
             $shop_suppliersRow = mysqli_fetch_array($resultSelect, MYSQLI_ASSOC); // 1 record
             
             // Nếu không tìm thấy dữ liệu -> thông báo lỗi
@@ -99,7 +99,7 @@
 
 
             <?php
-            // 4. Nếu người dùng có bấm nút Đăng ký thì thực thi câu lệnh UPDATE
+            // 4. Nếu người dùng có bấm nút Save thì thực thi câu lệnh UPDATE
             if (isset($_POST['btnSave'])) {
                 // Lấy dữ liệu người dùng hiệu chỉnh gởi từ REQUEST POST
                 $name = $_POST['name'];
@@ -113,10 +113,10 @@
                 $sql = "UPDATE products SET name='$name', description='$description', price='$price', amount='$amount', Image='$image' WHERE id=$id;";
             
                 // Thực thi UPDATE
-                mysqli_query($connect, $sql);
+                mysqli_query($mysqli, $sql);
             
                 // Đóng kết nối
-                mysqli_close($connect);
+                mysqli_close($mysqli);
             
             }
             ?>
