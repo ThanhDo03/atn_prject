@@ -23,6 +23,8 @@ services:
       MYSQL_USER: dott
       MYSQL_PASSWORD: dbPass@123
       MYSQL_ROOT_PASSWORD: 123@123Aa
+    networks:
+      - my-network
 
   phpmyadmin:
       image: phpmyadmin/phpmyadmin:latest
