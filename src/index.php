@@ -299,7 +299,7 @@ include_once 'config.php';
     </section>
 
 
-    <section class="deal-of-week set-bg spad" data-setbg="./img/55637.jng">
+    <section class="deal-of-week set-bg spad" data-setbg="./img/55637.jpg">
         <div class="container">
             <div class="col-lg-6 text-center">
                 <div class="section-title">
