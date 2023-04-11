@@ -167,7 +167,7 @@ include_once 'config.php';
 
     <section class="hero-section">
         <div class="hero-items owl-carousel">
-            <div class="single-hero-items set-bg" style="background-image: url('img/banners/Banner1.png');">
+            <div class="single-hero-items set-bg" data-setbg="./img/banners/Banner1.png">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
@@ -183,7 +183,7 @@ include_once 'config.php';
                     </div>
                 </div>
             </div>
-            <div class="single-hero-items set-bg" style="background-image: url('img/banners/Banner2.png');">
+            <div class="single-hero-items set-bg" data-setbg="./img/banners/Banner2.png">
                 <div class="container">
                 </div>
             </div>
@@ -227,7 +227,7 @@ include_once 'config.php';
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3">
-                    <div class="product-large set-bg" style="background-image: url('img/products/LogoGroup0.jpg');">
+                    <div class="product-large set-bg" data-setbg="./img/products/LogoGroup0.jpg"> 
                     </div>
                 </div>
                 <div class="col-lg-8 offset-lg-1">
@@ -299,7 +299,7 @@ include_once 'config.php';
     </section>
 
 
-    <section class="deal-of-week set-bg spad" style="background-image: url('img/55637.jpg');">
+    <section class="deal-of-week set-bg spad" data-setbg="./img/55637.jng">
         <div class="container">
             <div class="col-lg-6 text-center">
                 <div class="section-title">
