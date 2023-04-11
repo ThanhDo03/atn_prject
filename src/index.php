@@ -165,7 +165,7 @@ include_once("config.php");
 
     <section class="hero-section">
         <div class="hero-items owl-carousel">
-            <div class="single-hero-items set-bg" style="background-image: url('img/banners/Marvel.jpg');">
+            <div class="single-hero-items set-bg" style="background-image: url('img/banners/marvelmarvel.jpg');">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
@@ -181,7 +181,7 @@ include_once("config.php");
                     </div>
                 </div>
             </div>
-            <div class="single-hero-items set-bg" style="background-image: url('img/banners/Marvel-1.jpg');">
+            <div class="single-hero-items set-bg" style="background-image: url('img/banners/marvelmarvel-1.jpg');">
                 <div class="container">
                 </div>
             </div>
@@ -259,7 +259,7 @@ include_once("config.php");
                                 echo "
                                 <div class='product-item'>
                                 <div class='pi-pic'>
-                                    <img src='./Products/$image'>
+                                    <img src='./Products\\$image'>
                                     <div class='sale'>Sale</div>
                                     <div class='icon'>
                                         <i class='icon_heart_alt'></i>
