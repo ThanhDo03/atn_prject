@@ -17,7 +17,7 @@ services:
     container_name: db
     restart: always
     volumes:
-      - ./data:/var/lib/mysql
+      - ./mysql-data:/var/lib/mysql
     environment:
       MYSQL_DATABASE: toyskid_project
       MYSQL_USER: dott
