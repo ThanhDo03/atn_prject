@@ -258,7 +258,7 @@ include_once("config.php");
                                 echo "
                                 <div class='product-item'>
                                 <div class='pi-pic'>
-                                    <img src='./Products\\$image'>
+                                    <img src='./Products/$image'>
                                     <div class='sale'>Sale</div>
                                     <div class='icon'>
                                         <i class='icon_heart_alt'></i>
