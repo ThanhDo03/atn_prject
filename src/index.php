@@ -27,86 +27,16 @@ include_once("config.php");
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <script nonce="6a542a0d-7c5b-48c4-b05e-36d56d7b86fa">
-    (function(w, d) {
-        ! function(bw, bx, by, bz) {
-            bw[by] = bw[by] || {};
-            bw[by].executed = [];
-            bw.zaraz = {
-                deferred: [],
-                listeners: []
-            };
-            bw.zaraz.q = [];
-            bw.zaraz._f = function(bA) {
-                return function() {
-                    var bB = Array.prototype.slice.call(arguments);
-                    bw.zaraz.q.push({
-                        m: bA,
-                        a: bB
-                    })
-                }
-            };
-            for (const bC of ["track", "set", "debug"]) bw.zaraz[bC] = bw.zaraz._f(bC);
-            bw.zaraz.init = () => {
-                var bD = bx.getElementsByTagName(bz)[0],
-                    bE = bx.createElement(bz),
-                    bF = bx.getElementsByTagName("title")[0];
-                bF && (bw[by].t = bx.getElementsByTagName("title")[0].text);
-                bw[by].x = Math.random();
-                bw[by].w = bw.screen.width;
-                bw[by].h = bw.screen.height;
-                bw[by].j = bw.innerHeight;
-                bw[by].e = bw.innerWidth;
-                bw[by].l = bw.location.href;
-                bw[by].r = bx.referrer;
-                bw[by].k = bw.screen.colorDepth;
-                bw[by].n = bx.characterSet;
-                bw[by].o = (new Date).getTimezoneOffset();
-                if (bw.dataLayer)
-                    for (const bJ of Object.entries(Object.entries(dataLayer).reduce(((bK, bL) => ({
-                            ...bK[1],
-                            ...bL[1]
-                        }))))) zaraz.set(bJ[0], bJ[1], {
-                        scope: "page"
-                    });
-                bw[by].q = [];
-                for (; bw.zaraz.q.length;) {
-                    const bM = bw.zaraz.q.shift();
-                    bw[by].q.push(bM)
-                }
-                bE.defer = !0;
-                for (const bN of [localStorage, sessionStorage]) Object.keys(bN || {}).filter((bP => bP
-                    .startsWith("_zaraz_"))).forEach((bO => {
-                    try {
-                        bw[by]["z_" + bO.slice(7)] = JSON.parse(bN.getItem(bO))
-                    } catch {
-                        bw[by]["z_" + bO.slice(7)] = bN.getItem(bO)
-                    }
-                }));
-                bE.referrerPolicy = "origin";
-                bE.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(bw[by])));
-                bD.parentNode.insertBefore(bE, bD)
-            };
-            ["complete", "interactive"].includes(bx.readyState) ? zaraz.init() : bw.addEventListener(
-                "DOMContentLoaded", zaraz.init)
-        }(w, d, "zarazData", "script");
-    })(window, document);
-    </script>
 </head>
 
 <body>
-
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
     <header class="header-section">
         <div class="container">
             <div class="inner-header">
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
-                            <a href="./index.html">
+                            <a href="./index.php">
                                 <img class="img_logo" src="img/Logo.png" alt="">
                             </a>
                         </div>
@@ -179,7 +109,7 @@ include_once("config.php");
                     <div class="depart-btn">
                         <!-- <i class="ti-menu"></i> -->
                         <span>All departments</span>
-                        <ul class="depart-hover">
+                        <!-- <ul class="depart-hover">
                             <li class="active"><a href="#">Women’s Clothing</a></li>
                             <li><a href="#">Men’s Clothing</a></li>
                             <li><a href="#">Underwear</a></li>
@@ -188,22 +118,22 @@ include_once("config.php");
                             <li><a href="#">Accessories/Shoes</a></li>
                             <li><a href="#">Luxury Brands</a></li>
                             <li><a href="#">Brand Outdoor Apparel</a></li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
-                        <li><a href="./shop.html">Shop</a></li>
+                        <li class="active"><a href="./index.php">Home</a></li>
+                        <li><a href="./index.php">Shop</a></li>
                         <li><a href="#">Collection</a>
-                            <ul class="dropdown">
+                            <!-- <ul class="dropdown">
                                 <li><a href="#">Men's</a></li>
                                 <li><a href="#">Women's</a></li>
                                 <li><a href="#">Kid's</a></li>
-                            </ul>
+                            </ul> -->
                         </li>
-                        <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="./index.php">Blog</a></li>
+                        <li><a href="./index.php">Contact</a></li>
                         <li>
                             <?php
                                 if (isset($_SESSION['Welcome']['useremail'])) {
