@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("config.php");
+include_once 'config.php';
 
 ?>
 <!DOCTYPE html>
@@ -61,7 +61,8 @@ include_once("config.php");
                                         <table>
                                             <tbody>
                                                 <tr>
-                                                    <td class="si-pic"><img src="img/Thor-Marvel.jpg" alt=""></td>
+                                                    <td class="si-pic"><img src="img/Thor-Marvel.jpg" alt="">
+                                                    </td>
                                                     <td class="si-text">
                                                         <div class="product-selected">
                                                             <p>$60.00 x 1</p>
@@ -69,11 +70,12 @@ include_once("config.php");
                                                         </div>
                                                     </td>
                                                     <td class="si-close">
-                                                    <i class="fa-sharp fa-solid fa-xmark"></i>
+                                                        <i class="fa-sharp fa-solid fa-xmark"></i>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="si-pic"><img src="img/Wasp-Marvel.jpg" alt=""></td>
+                                                    <td class="si-pic"><img src="img/Wasp-Marvel.jpg" alt="">
+                                                    </td>
                                                     <td class="si-text">
                                                         <div class="product-selected">
                                                             <p>$60.00 x 1</p>
@@ -81,7 +83,7 @@ include_once("config.php");
                                                         </div>
                                                     </td>
                                                     <td class="si-close">
-                                                    <i class="fa-sharp fa-solid fa-xmark"></i>
+                                                        <i class="fa-sharp fa-solid fa-xmark"></i>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -136,24 +138,24 @@ include_once("config.php");
                         <li><a href="./index.php">Contact</a></li>
                         <li>
                             <?php
-                                if (isset($_SESSION['Welcome']['useremail'])) {
-                                    echo "<a href=''>Ab Me</a>
-                                            <ul class='dropdown'>
-                                            <li><a href=''>Account</a></li>
-                                            <li><a href=''>Shopping Cart</a></li>
-                                            <li><a href=''>Pays</a></li>
-                                            <li><a href=''>Sign Up</a></li>
-                                            <li><a href='Logout.php'>Log Out</a></li>
-                                            <li><a href=''>About Us</a></li>
-                                        </ul>";
-                                } else {
-                                    echo "<a href='./Welcome.php'>Sign In</a>
-                                            <ul class='dropdown'>
-                                                <li><a href='./Welcome.php'>SIGN UP</a></li>
-                                            </ul>
-                                    ";
-                                }
-                        ?>
+                            if (isset($_SESSION['Welcome']['useremail'])) {
+                                echo "<a href=''>Ab Me</a>
+                                                                        <ul class='dropdown'>
+                                                                        <li><a href=''>Account</a></li>
+                                                                        <li><a href=''>Shopping Cart</a></li>
+                                                                        <li><a href=''>Pays</a></li>
+                                                                        <li><a href=''>Sign Up</a></li>
+                                                                        <li><a href='Logout.php'>Log Out</a></li>
+                                                                        <li><a href=''>About Us</a></li>
+                                                                    </ul>";
+                            } else {
+                                echo "<a href='./Welcome.php'>Sign In</a>
+                                                                        <ul class='dropdown'>
+                                                                            <li><a href='./Welcome.php'>SIGN UP</a></li>
+                                                                        </ul>
+                                                                ";
+                            }
+                            ?>
                         </li>
                     </ul>
                 </nav>
@@ -165,7 +167,7 @@ include_once("config.php");
 
     <section class="hero-section">
         <div class="hero-items owl-carousel">
-            <div class="single-hero-items set-bg" style="background-image: url('img/banners/marvelmarvel.jpg');">
+            <div class="single-hero-items set-bg" style="background-image: url('img/banners/Banner1.png');">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
@@ -181,7 +183,7 @@ include_once("config.php");
                     </div>
                 </div>
             </div>
-            <div class="single-hero-items set-bg" style="background-image: url('img/banners/marvelmarvel-1.jpg');">
+            <div class="single-hero-items set-bg" style="background-image: url('img/banners/Banner2.png');">
                 <div class="container">
                 </div>
             </div>
@@ -225,7 +227,7 @@ include_once("config.php");
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3">
-                    <div class="product-large set-bg"  style="background-image: url('img/products/LogoGroup0.jpg');">
+                    <div class="product-large set-bg" style="background-image: url('img/products/LogoGroup0.jpg');">
                     </div>
                 </div>
                 <div class="col-lg-8 offset-lg-1">
@@ -239,7 +241,7 @@ include_once("config.php");
                     </div>
                     <div class="product-slider owl-carousel">
                         <?php
-                        include_once('config.php');
+                        include_once 'config.php';
                         // $connect = mysqli_connect('db', 'dott', 'dbPass@123', 'ToysKid_Project');
                         // if (mysqli_connect_errno()) {
                         //     echo 'Không thể kết nối đến MySQL: ' . mysqli_connect_error();
@@ -248,39 +250,39 @@ include_once("config.php");
                         // truy vấn dữ liệu
                         // $result = mysqli_query($mysqli, 'SELECT name, price, Image FROM products');
                         $sql = 'SELECT * FROM products';
-                        $result = mysqli_query($mysqli, $sql);
+                        $res = mysqli_query($mysqli, $sql);
                         // kiểm tra kết quả và hiển thị dữ liệu
-                        if (mysqli_num_rows($result) > 0) {
-                            while ($row = mysqli_fetch_assoc($result)) {
+                        if (mysqli_num_rows($res) > 0) {
+                            while ($row = mysqli_fetch_array($res)) {
                                 $name = $row['name'];
                                 $price = $row['price'];
                                 $image = $row['Image'];
-                               
+                        
                                 echo "
-                                <div class='product-item'>
-                                <div class='pi-pic'>
-                                    <img src='./Products\\$image'>
-                                    <div class='sale'>Sale</div>
-                                    <div class='icon'>
-                                        <i class='icon_heart_alt'></i>
-                                    </div>
-                                    <ul>
-                                        <li class='w-icon active'><a href='#'><i class='fa-sharp fa-solid fa-bag-shopping'></i></a></li>
-                                        <li class='quick-view'><a href='#'>+ Quick View</a></li>
-                                        <li class='w-icon'><a href='#'><i class='fa fa-random'></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class='pi-text'>
-                                    <a href='#'>
-                                        <h5>$name</h5>
-                                    </a>
-                                    <div class='product-price'>
-                                        $14.00
-                                        <span>$price</span>
-                                    </div>
-                                </div>
-                            </div>
-                                ";
+                                                        <div class='product-item'>
+                                                        <div class='pi-pic'>
+                                                            <img src='./Products/$image'>
+                                                            <div class='sale'>Sale</div>
+                                                            <div class='icon'>
+                                                                <i class='icon_heart_alt'></i>
+                                                            </div>
+                                                            <ul>
+                                                                <li class='w-icon active'><a href='#'><i class='fa-sharp fa-solid fa-bag-shopping'></i></a></li>
+                                                                <li class='quick-view'><a href='#'>+ Quick View</a></li>
+                                                                <li class='w-icon'><a href='#'><i class='fa fa-random'></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class='pi-text'>
+                                                            <a href='#'>
+                                                                <h5>$name</h5>
+                                                            </a>
+                                                            <div class='product-price'>
+                                                                $14.00
+                                                                <span>$price</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                        ";
                             }
                         } else {
                             echo 'Không có sản phẩm nào trong cơ sở dữ liệu.';
@@ -333,108 +335,10 @@ include_once("config.php");
     </section>
 
 
-    <section class="man-banner spad">
-        <div class="container-fluid">
-            <!-- <div class="row">
-                <div class="col-lg-8">
-                    <div class="filter-control">
-                        <ul>
-                            <li class="active">Lego City - Family</li>
-                            <li>HandBag</li>
-                            <li>Shoes</li>
-                            <li>Accessories</li>
-                        </ul>
-                    </div>
-                    <div class="product-slider owl-carousel">
-                        <?php
-                        $connect = mysqli_connect('localhost', 'root', '', 'ToysKid_Project');
-                        
-                        if (mysqli_connect_errno()) {
-                            echo 'Không thể kết nối đến MySQL: ' . mysqli_connect_error();
-                            exit();
-                        }
-                        
-                        // truy vấn dữ liệu
-                        $result = mysqli_query($connect, 'SELECT name, price, Image FROM products');
-                        
-                        // kiểm tra kết quả và hiển thị dữ liệu
-                        if (mysqli_num_rows($result) > 0) {
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                $name = $row['name'];
-                                $price = $row['price'];
-                                $image = $row['Image'];
-                               
-                                echo "
-                                <div class='product-item'>
-                                <div class='pi-pic'>
-                                    <img src='./Admin/Products\\$image'>
-                                    <div class='sale'>Sale</div>
-                                    <div class='icon'>
-                                        <i class='icon_heart_alt'></i>
-                                    </div>
-                                    <ul>
-                                        <li class='w-icon active'><a href='#'><i class='icon_bag_alt'></i></a></li>
-                                        <li class='quick-view'><a href='#'>+ Quick View</a></li>
-                                        <li class='w-icon'><a href='#'><i class='fa fa-random'></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class='pi-text'>
-                                    <a href='#'>
-                                        <h5>$name</h5>
-                                    </a>
-                                    <div class='product-price'>
-                                        $14.00
-                                        <span>$price</span>
-                                    </div>
-                                </div>
-                            </div>
-                                ";
-                            }
-                        } else {
-                            echo 'Không có sản phẩm nào trong cơ sở dữ liệu.';
-                        }
-                        
-                        // đóng kết nối
-                        mysqli_close($connect);
-                        ?>
+    
 
 
-                        <div class="product-item">
-                            <div class="pi-pic">
-                                <img src="img/products/man-3.jpg" alt="">
-                                <div class="icon">
-                                    <i class="icon_heart_alt"></i>
-                                </div>
-                                <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                    <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="pi-text">
-                                <div class="catagory-name">Towel</div>
-                                <a href="#">
-                                    <h5>Pure Pineapple</h5>
-                                </a>
-                                <div class="product-price">
-                                    $34.00
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 offset-lg-1">
-                    <div class="product-large set-bg m-large" data-setbg="img/products/LogoGroup1.jpg">
-                        <h2>Men’s</h2>
-                        <a href="#">Discover More</a>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-    </section>
-
-
-    <div class="instagram-photo">
+    <!-- <div class="instagram-photo">
         <div class="insta-item set-bg" data-setbg="img/Cap-Marvel.jpg">
             <div class="inside-text">
                 <h5><a href="#">Captain Marvel</a></h5>
@@ -465,7 +369,7 @@ include_once("config.php");
                 <h5><a href="#">Black Widow Marvel</a></h5>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <!-- <section class="latest-blog spad">
@@ -680,12 +584,12 @@ include_once("config.php");
                         <div class="copyright-text">
 
                             Copyright &copy;
-                            <script data-cfasync="false"
-                                src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
                             <script>
-                            document.write(new Date().getFullYear());
-                            </script> All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved | This template is made with <i
+                                class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                                target="_blank">Colorlib</a>
 
                         </div>
                         <div class="payment-pic">
@@ -711,17 +615,16 @@ include_once("config.php");
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
+        window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-    gtag('config', 'UA-23581568-13');
+        gtag('config', 'UA-23581568-13');
     </script>
-    <script defer
-        src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993"
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993"
         integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA=="
         data-cf-beacon='{"rayId":"79f83bff0abd045b","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.2.0","si":100}'
         crossorigin="anonymous"></script>
